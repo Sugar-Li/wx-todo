@@ -1,0 +1,61 @@
+<view class='container'>
+
+	<!--判断datas  -->
+	<block wx:if="{{dates.length}}">
+		<block wx:for='{{ dates }}' wx:key='index'>
+			<!--输出dates  -->
+			<text class='date'>{{item}}</text>
+
+			<!--循环遍历  这里的item是上面的日期date-->
+			<block wx:for='{{groupedHistory[item]}}' wx:key='index'>
+				<!-- 输出history -->
+				<view class='history-item'>
+
+					<!--此时的item是history对象  -->
+					<!--判断item.action 是增，删，切换时 -->
+					<block wx:if='{{item.action==="create"||item.action==="delected"||item.action==="finished"||item.action==="restart"}}'>
+						<!--1. 如果存在timeSetting,即允许显示时间 (默认是false，需要在系统设置中变换) -->
+						<!--判断time Setting  -->
+						<block wx:if="{{timeSetting}}">
+							<!--文本与时间  -->
+							<view class='action-with-time'>
+								<!--文本  -->
+								<view class='action-icon {{item.action}}'>{{actionTexts[item.action]}}</view>
+								<!--时间  -->
+								<view class='time'>{{ item.time }}</view>
+							</view>
+						</block>
+						<!-- 判断timeSetting -->
+						<block wx:else>
+							<!--只显示文本--这里的文本是行为  -->
+							<view class='action-icon {{item.action}}'>{{actionTexts[item.action]}}</view>							
+						</block>
+
+						<!-- 2. 显示todo -->
+						<item class='todo'
+							content='{{item.todo.content}}'
+							tags='{{item.todo.tags}}'
+							action='{{item.todo.action}}'
+							data-index='{{ item.index }}'
+							bind:itemremove='onItemRemove'
+						></item>
+					</block>
+
+					<!--判断item  全部切换和全部删除已选-->
+					<block wx:else>
+						<view class='action {{item.action}}'>{{actionTexts[item.action]}}</view>
+					</block>
+					
+				</view>
+			</block>
+		</block>
+	</block>
+
+<!--判断dates  -->
+	<block wx:else>
+		<view class='empty'>
+			<text class='title'>暂无历史数据</text>
+			<text class='content'>请前往【待办】添加待办事件</text>
+		</view>
+	</block>
+</view>

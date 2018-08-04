@@ -1,0 +1,38 @@
+.section{
+	padding: 20rpx 0;
+	border-bottom:1rpx solid #ddd;
+	font-size: 30rpx;
+	color: #9b9b9b
+}
+
+.section textarea{
+ width: 670rpx;
+ background-color: #eee;
+ padding: 20rpx
+}
+
+.tags{
+	display: flex;
+	padding-top: 20rpx
+}
+
+.tag{
+	display: flex;
+	align-items: center;
+	width: 180rpx;
+	height:60rpx;
+	border: 1px solid #7ed321;
+	padding: 10rpx 20rpx;
+	font-size: 30rpx;
+	margin-right: 20rpx
+}
+
+.tag text{
+	flex: 1
+}
+
+button{
+	font-size: 40rpx;
+	margin-top: 60rpx
+}
+

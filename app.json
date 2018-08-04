@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/history/history",
+    "pages/setting/setting",
+    "pages/mine/mine",
+    "pages/personal/personal",
+    "pages/detail/detail"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#7ed321",
+    "navigationBarTitleText": "Todo",
+    "navigationBarTextStyle":"white"
+  },
+	"tabBar": {
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "首页",
+			"iconPath": "images/todo.png",
+			"selectedIconPath": "images/todo-active.png"
+		},
+		{
+			"pagePath": "pages/history/history",
+			"text": "历史",
+			"iconPath": "images/history.png",
+			"selectedIconPath": "images/history-active.png"
+		},
+		{
+			"pagePath": "pages/mine/mine",
+			"text": "我的",
+			"iconPath": "images/me.png",
+			"selectedIconPath": "images/me-active.png"
+		}
+		
+		
+		]
+	}
+}

@@ -1,0 +1,64 @@
+.header{
+	display: flex;
+	align-items: center;
+	margin-bottom:30rpx
+}
+
+.quick{
+	display: flex;
+	border: 1px solid #ddd;
+	align-items: center;
+	flex:1;
+	padding: 20rpx;
+	color: #9b9b9b
+}
+.quick .icon{
+	width: 40rpx;
+	color: #7ed321;
+	font-size: 40rpx;
+	margin-right: 10rpx;
+	font-style: bold;
+}
+
+.quick .content{
+	flex: 1;
+	font-size: 30rpx
+}
+
+.header .new{
+	color: #7ed321;
+	padding-left: 10rpx;
+	width: 120rpx;
+	font-size: 30rpx
+}
+
+.todos{
+	border: 1px solid #ddd
+}
+
+.footer{
+	display: flex;
+	/*两端对齐，中间空白区域平分  */
+	justify-content: space-between;
+	margin: 30rpx 0;
+	padding: 0 10rpx;
+	font-size: 30rpx;
+	color: #9b9b9b
+}
+
+.empty{
+	display: flex;
+	flex-direction: column;
+	align-items: center
+}
+.empty .title{
+	font-size: 60rpx;
+	margin: 200rpx 50rpx 50rpx;
+	color: #9b9b9b
+}
+
+.empty .content{
+	color: #ddd;
+	text-align: center
+}
+

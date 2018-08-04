@@ -1,0 +1,44 @@
+<view class='container'>
+<!--内容  -->
+	<view class='section'>
+		<input class='content' placeholder='待办内容'
+			bindinput='inputContent' auto-focus='true'
+		></input>
+	</view>
+
+	<!-- 存在tags时的存在 -->
+	<view class='tags' wx:if='{{tags.length}}'>
+		<!-- 遍历tags  -->
+		<view class='tag' wx:for='{{tags}}' wx:key='index'>
+			<!--tags 的样式  -->
+			<text class='text'>{{item}}</text>
+			<icon class='remove' type='clear' size='16' data-index="{{index}}"
+			bindtap='removeTag'
+			></icon>
+		</view>
+	</view>
+
+	<!-- 默认存在的tags输入框 -->
+	<view class='section'>
+		<input class='tags' placeholder='添加标签...' 
+			wx:if='{{ tags.length<3}}'
+			auto-focus value='{{tag}}'
+			bindblur='addTag'
+		></input>
+		<input value='最多出入三个标签'
+		disabled
+		wx:if='{{tags.length>=3}}'
+		></input>
+	</view>
+
+<!--备注  -->
+	<view class='section'>
+		<text>备注：</text>
+		<textarea auto-height='true'
+			bindinput='inputExtra'
+		></textarea>
+	</view>
+
+<!--button  -->
+	<button type='primary' bindtap='create'>创建</button>
+</view>

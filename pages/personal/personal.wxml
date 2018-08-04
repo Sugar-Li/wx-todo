@@ -1,0 +1,11 @@
+<view class='container'>
+	<view class='item'>
+		<text>设置头像</text>
+		<image src='{{ avatarUrl }}' bindtap='changeAvatar'></image>
+	</view>
+	<view class='item'>
+		<text>设置用户名</text>
+		<input value='{{nickName}}' bindblur='blurName' bindconfirm='changeName'></input>
+	</view>
+
+</view>

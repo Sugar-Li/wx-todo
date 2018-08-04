@@ -1,0 +1,43 @@
+<!--整体的框  -->
+<view class='item-container'>
+	<!--单个框,它的类样式有两个，第二个是用在history中的,当不存在action且finished时才会触发finished 样式  -->
+	<view class='item {{action ? "":(finished ?"finished":"")}}'>
+		<!--icon选择器,完成和未完成是两个不同的类型icon,最后的判断是不存在action才能触发  -->
+		<icon class='checkbox' type='{{finished?"success":"circle"}}' wx:if='{{!action}}'></icon>
+		
+		<!--存在tags时  -->
+		<block wx:if='{{tags.length}}'>
+			<!--设置包含tags的内容  -->
+			<view class='content-tags'>
+				<view class='content'>{{ content }}</view>
+				<view class='tags'>
+					<text class='tag' wx:for='{{tags}}' wx:key='index'>{{item}}</text>
+				</view>
+			</view>
+		</block>
+		<!--不存在tags时  -->
+		<block wx:else>
+			<view class='content'>{{ content }}</view>
+		</block>
+
+		<!--设置备注折叠时的icon  -->
+		<icon type='info' size='16' 
+		color='{{collapsed? "#7ed321":"#ddd"}}'
+		wx:if='{{ extra }}'
+		catchtap='toggleExtra'
+		>
+		</icon>
+
+		<!--移除icon  -->
+		<icon type='clear' size='16'
+			catchtap='removeTodo'
+		></icon>
+
+	</view>
+
+	<!--展开备注  -->
+	<view class='extra-detail' wx:if='{{!collapsed}}'>
+		<textarea auto-height disabled value='{{ extra}}'></textarea>
+	</view>
+
+</view>

@@ -1,0 +1,22 @@
+.item{
+	display: flex;
+	align-items: center;
+	border-bottom: 1rpx solid #ddd;
+	color: #9b9b9b;
+	font-size: 30rpx;
+	padding: 20rpx 0
+}
+
+.item text{
+	flex: 1
+}
+
+.item image{
+	width: 100rpx;
+	height:100rpx
+}
+
+.item input{
+	width: 400rpx;
+	text-align: right
+}

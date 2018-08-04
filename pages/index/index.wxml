@@ -1,0 +1,57 @@
+<view class='container'>
+	<!--头部  -->
+	<view class='header'>
+		<view class='quick'>
+			<view class='icon'>
+				<text>+</text>
+			</view>
+			<input class='content' placeholder='请输入待办事情'
+			value='{{content}}'
+				bindinput='inputTodo'
+				bindblur='addTodo'
+			></input>
+		</view>
+		<view class='new' bindtap='navTo'>添加待办</view>
+	</view>
+
+	<!--内容  -->
+	<block wx:if='{{todos.length}}'>
+
+		<view class='todos'>
+			<item wx:for="{{todos}}" wx:key="id"
+				content="{{item.content}}"
+				tags="{{item.tags}}"
+				extra="{{item.extra}}"
+				finished="{{item.finished}}"
+				data-index="{{index}}"
+				bind:itemremove='onItemRemove'
+				bindtap='toggleTodo'
+			>			
+			</item>
+		</view>
+
+		<view class='footer'>
+			<!--allSetting 是设置中的变量，用来判断是否使用这个功能点  -->
+			<text class='btn' wx:if='{{allSetting}}' bindtap='toggleAll'>	{{allFinished?"全部重启":"全部完成"}}
+			</text>
+
+			<!-- 剩余未完成 当leftCount==0时，这一项小时 -->
+			<text wx:if="{{leftCount}}">{{leftCount}}未完成</text>
+
+			<!-- 删除所有选中项目 判断clearSetting是否为true -->
+			<text class='btn'
+				wx:if='{{ todos.length>leftCount}}'
+				wx:if='{{clearSetting}}'
+				bindtap='clearFinished'
+			>清除所有</text>
+		</view>
+	</block>
+
+	<!--todos不存在时  -->
+	<block wx:else>
+		<view class='empty'>
+			<text class='title'> 恭喜</text>
+			<text class='content'> 已经完成全部所有待办事情</text>
+		</view>
+	</block>
+</view>

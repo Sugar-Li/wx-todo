@@ -1,0 +1,24 @@
+.title{
+	color: #9b9b9b;
+	font-style: bold;
+	font-size: 30rpx;
+	border-left: 10rpx solid #7ed321;
+	padding-left: 10rpx;
+	margin-top: 30rpx 
+}
+
+.section{
+	display: flex;
+	padding: 20rpx 0;
+	border-bottom: 1rpx solid #ddd;
+	color: #7ed321;
+	font-size: 30rpx;
+	align-items: center 
+}
+
+.section text{
+	flex: 1
+}
+.section switch{
+	width: 120rpx
+}

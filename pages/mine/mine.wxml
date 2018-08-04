@@ -1,0 +1,24 @@
+<view class='container'>
+	<!--头像  -->
+	<view class='avatar'>
+		<image src='{{ avatarUrl}}' bindtap='changeAvatar'></image>
+	</view>
+	<!--昵称  -->
+	<view class='nickName'>{{nickName}}</view>
+	<!--个人设置  -->
+	<view class='item'
+		data-target='personal'
+		bindtap='navTo'
+	>
+		<text>个人信息</text>
+		<text>→</text>
+	</view>
+	<!--系统设置  -->
+	<view class='item'
+		data-target='setting'
+		bindtap='navTo'
+	>
+		<text>系统设置</text>
+		<text>→</text>
+	</view>
+</view>

@@ -1,0 +1,8 @@
+/**app.wxss**/
+.container {
+	padding: 25rpx;
+	border-bottom: 1rpx solid #ddd;
+	font-size:30rpx;
+	align-items: center;
+	color: #9b9b9b	
+} 
